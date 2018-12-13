@@ -58,7 +58,7 @@
 	width: 100%;
 	background-color: #93B3D2;
 	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-bottom: 0px;
 	clear: left;
 	border-bottom: 2px solid #6190BD;
 }
@@ -66,7 +66,7 @@
 	width: 100%;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	background-color: #6c4c2d;
+	background-color: #2B2B2B;
 	clear: left;
 }
 .container .secondary_header ul {
@@ -79,6 +79,7 @@
 	padding-bottom: 15px;
 	padding-left: 0px;
 	width: 100%;
+
 }
 .secondary_header ul li {
 	list-style: none;
@@ -91,7 +92,8 @@
 	letter-spacing: 1px;
 	margin-left: auto;
 	text-align: center;
-	width: 16%;
+	width: 20%;
+	display: table-cell;
 	transition: all 0.3s linear;
 }
 .secondary_header ul li:hover {
