@@ -1,6 +1,7 @@
 @charset "UTF-8";
 .frame {
 	width: 100%;
+	margin: 0px;
 	display: flex;
 }
 .container {
@@ -29,6 +30,10 @@
 	background-color: #6190bd;
 	display: block;
 	margin: 0;
+	border-bottom: thick;
+	border-bottom-color: aqua;
+	
+		
 }
 .header .header_nav {
 	background-color: #b3b3b3;
@@ -38,14 +43,14 @@
 
 .header ul {
 	overflow: hidden;
-	margin: 0;
+	margin: 0px;
 	
 }
 
 .header li {
-	float: left;
+	float: right;
 	display: block;
-	margin: 0;
+	margin: 0px;
 }
 
 .header h1 {
@@ -74,14 +79,37 @@
 	margin: 0;
 }
 
-.container .site_body{
+.site_body{
 	width: 100%;
+	min-height: 1000px; 
 	margin: 0px;
 	background-color: #d2dfec;
 }
 body {
 	margin: 0;
 }
-@media (max-width: 320px) {}
+h3 {
+	margin: 0;
+	
+}
+p {
+	margin:0;
+	
+}
+@media (max-width: 400px) {
+
+.nav_button {
+	background-color: #b3b3b3;
+	min-width: 30px;
+	font-size: 15px;
+	padding-left:16px;
+	padding-right:16px;
+	padding-top:8px;
+	padding-bottom: 8px;
+	color: white;
+	text-align: center;
+	margin:0;
+}
+}
 
 	
