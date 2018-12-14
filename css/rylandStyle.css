@@ -1,60 +1,87 @@
 @charset "UTF-8";
-.container {
-	background-color: #FFFFFF;
+.frame {
 	width: 100%;
-	margin-left: auto;
-	margin-right: auto;
+	display: flex;
+}
+.container {
+	float: left;
+	background-color: #FFFFFF;
+	width: 90%;
+	margin: 0;
 	border-bottom-width: 0px;
-	padding-left: 0px;
-	padding-top: 0px;
-	padding-right: 0px;
-	padding-bottom: 0px;
+	padding: 0px;
+	display: block;
+}
+.border {
+	width: 5%;
+	min-height: 2px;
+	background-color: #b0c4de;
+	margin: 0;
+	display: block;
 }
 .header {
 	width: 100%;
 	display: block;
+	margin: 0px;
 }
 
 .header .header_title {
-	background-color: #93b3d2;
+	background-color: #6190bd;
+	display: block;
+	margin: 0;
 }
 .header .header_nav {
-	background-color: #000000;
+	background-color: #b3b3b3;
+	margin: 0;
+	
 }
 
 .header ul {
 	overflow: hidden;
+	margin: 0;
+	
 }
 
 .header li {
 	float: left;
 	display: block;
+	margin: 0;
 }
 
 .header h1 {
 	color: #ffffff;
 	padding-left: 30px;
 	font-size: 30px;
-	padding-top: 2px;
-	padding-bottom: 2px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin:0;
 }
+
 .nav_button {
-	background-color: #5C00FF;
+	background-color: #b3b3b3;
+	min-width: 50px;
+	font-size: 20px;
 	padding-left:16px;
 	padding-right:16px;
 	padding-top:8px;
 	padding-bottom: 8px;
 	color: white;
 	text-align: center;
+	margin:0;
+}
+.nav_button:hover{
+	background-color: #575757;
+	margin: 0;
 }
 
+.container .site_body{
+	width: 100%;
+	margin: 0px;
+	background-color: #d2dfec;
+}
 body {
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-	margin-left: 0px;
+	margin: 0;
 }
-
 @media (max-width: 320px) {}
 
 	
