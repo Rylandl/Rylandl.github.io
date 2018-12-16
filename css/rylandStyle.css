@@ -1,9 +1,11 @@
 @charset "UTF-8";
 .frame {
 	position: static;
-	background-color: #B2CFE8;
+	background-color: #FFFFFF;/*B2CFE8*/
 	margin: 0px;
-
+	background-image: url(background.png);
+	background-size: 100vw;
+	background-attachment: fixed;
 	display: flex;
 	
 }
@@ -31,7 +33,7 @@
 	width: 100%;
 	border-bottom: solid;
 	border-bottom-width: thin;
-	border-bottom-color: #000000;
+	border-bottom-color: #575757;
 		
 }
 .header .header_nav {
@@ -42,7 +44,7 @@
 	padding: 0;
 	border-bottom: solid;
 	border-bottom-width: thin;
-	border-bottom-color: #000000;
+	border-bottom-color: #575757;
 	position: relative;
 	
 }
@@ -94,7 +96,7 @@
 	font-size: 20px;
 	left: 0px;
 	top: 30px;
-	width: 340px;
+	/*width: 340px;*/
 }
 
 .nav_button_content ul {
