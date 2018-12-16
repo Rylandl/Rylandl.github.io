@@ -1,26 +1,24 @@
 @charset "UTF-8";
 .frame {
-	width: 100%;
+	position: static;
+	background-color: #90C9F7;
 	margin: 0px;
+
 	display: flex;
+	
 }
 .container {
 	float: left;
-	background-color: #FFFFFF;
-	width: 90%;
+	position: static;
+	width: 100%;
+	margin-left: 5%;
+	margin-right: 5%;
 	height: 100%;
-	margin: 0;
 	border-bottom-width: 0px;
 	padding: 0px;
 	display: block;
 }
-.border {
-	width: 5%;
-	min-height: 2px;
-	background-color: #b0c4de;
-	margin: 0;
-	display: block;
-}
+
 .header {
 	display: block;
 	width: 100%;
@@ -30,7 +28,6 @@
 .header .header_title {
 	background-color: #6190bd;
 	display: flex;
-	margin: 0;
 	width: 100%;
 	border-bottom: solid;
 	border-bottom-width: thin;
@@ -40,7 +37,6 @@
 .header .header_nav {
 	display: flex;
 	background-color: #b3b3b3;
-	margin: 0;
 	width: 100%;
 	height: 30px;
 	padding: 0;
@@ -62,7 +58,6 @@
 	float: right;
 	display: block;
 	padding: 0;
-	margin: 0px;
 }
 
 .header h1 {
@@ -87,10 +82,10 @@
 	padding-right:16px;
 	padding-top:8px;
 	padding-bottom: 8px;
-	color: white;
+	color: #ffffff;
 	height: 14px;
 	text-align: center;
-	margin:0;
+
 }
 
 .nav_button_content{
@@ -104,43 +99,56 @@
 }
 
 .nav_button_content ul {
-	margin: 0px;
+	width: 306px;
 }
 
 .nav_button_content li {
 	float: center;
-	margin: 0;
 	width: 100%;
 	display: block;
-	margin: 0px;
 }
 .nav_button:hover {
 	background-color: #575757;
-	margin: 0;
 }
 .nav_button:hover .nav_button_content{
 	display: block;
-	margin: 0;
+	z-index: 99;
 }
 
 .site_body{
 	width: 100%;
+	position: static;
+	float: left;
 	min-height: 1000px; 
 	padding: 0px;
-	margin: 0px;
-	background-color: #d2dfec;
+	background-color: #FFFFFF;
+}
+.thirty_partition{
+	
+	display:block;
+	position: relative;
+	margin:0;
+	margin-top: 20px;
+	width: 30%;
+}
+.sixty_partition{
+	display:block;
+	position: relative;
+	margin:0;
+	margin-top: 20px;
+	width: 30%;
+}
+.full_partition{
+	display:block;
+	position: relative;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 20px;
 }
 body {
 	margin: 0;
 }
-h3 {
-	margin: 0;
-	
-}
-p {
-	margin:0;
-	
-}
+
 @media (max-width: 400px) {
 
 .nav_button {
