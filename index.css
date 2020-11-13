@@ -1,0 +1,23 @@
+.sidenav {
+	height: 100%;
+	width: 160px;
+	padding: 0px 0px 0px 0px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	overflow-x: hidden;
+	padding-top: 20px;
+	background-color: #00334E;
+}
+
+.main {
+	margin-left: 160px;
+	margin-top: 0px;
+	top: 0;
+	left: 0;
+	width: 100%;
+	position: fixed;
+	height: 100%;
+	padding: 0px 10px;
+	background-color: #F6F5F5;
+}
