@@ -13,10 +13,22 @@
 			<h2 style="text-align: left; margin-left: 10px; margin-top: 0px; color: #FFFFFF">Ryland Lillibridge</h2>
 		</div>
 		<div class="main">
-			<h3> Kilobots </h3>
+			<h2> Kilobots </h2>
+			<h3> Shortest path algorithm demo </h3>
 			<p> Distributed shortest path algorithm <a href="kilosim.html">live demo</a> </p>
 			<p> Drag the kilobots into place and double click the background to turn on the lights, telling them to go </p>
 			
+			<h3> Algorithm overview </h3>
+			<p> Coming soon... </p>
+			<!-- 
+			<p> 
+				The algorithm is rather simple and can be broken into two phases: (1) the initial tree span and (2) the trace back along the correct path. This ping-pong style search is an inherent part of distributed searches. In a centralized shortest-path search, the job ends once the destination is found as the requesting party is the one carrying out all comparisons in the search. In a distributed system, a requester relies on a network of peers to search for another node on the network. Once the target is found, the best route must be communicated back to the requester. 
+			</p>
+			
+			<p> 
+				The shortest path algorithm explored here takes advantage of the need for the approach to have two distinct phases, leveraging this fact in its core data-structure for route storage. This novel approach to route encoding lets complex routes be stored in arbitrarily few bits, constrainted only by probability of ID collision, an issue that will be explored later on. 
+			</p>
+			-->
 		</div>
 	</div>
 </body>
