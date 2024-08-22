@@ -23,3 +23,7 @@
 	padding: 0px 10px;
 	background-color: #F6F5F5;
 }trainted only by probability of ID collision, an issue that 
+
+.multiline {
+	white-space: break-spaces;
+}
