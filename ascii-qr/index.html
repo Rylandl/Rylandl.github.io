@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ASCII QR Generator</title>
+	<style>
+		body {
+			font-family: monospace;
+			background: #1a1a1a;
+			color: #e0e0e0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-height: 100vh;
+			margin: 0;
+			padding: 20px;
+			box-sizing: border-box;
+		}
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			max-width: 800px;
+			width: 100%;
+		}
+		h1 {
+			font-size: 18px;
+			margin-bottom: 20px;
+		}
+		input {
+			font-family: monospace;
+			font-size: 16px;
+			padding: 10px;
+			width: 100%;
+			max-width: 400px;
+			background: transparent;
+			border: none;
+			border-bottom: 1px solid #333;
+			color: #e0e0e0;
+			box-sizing: border-box;
+			text-align: center;
+		}
+		input:focus {
+			outline: none;
+			border-bottom-color: #7aa2f7;
+		}
+		input::placeholder {
+			color: #555;
+		}
+		#output {
+			margin: 20px 0 30px;
+			font-size: 5px;
+			line-height: 5px;
+			text-align: left;
+			letter-spacing: 0;
+			background: #e0e0e0;
+			color: #1a1a1a;
+			padding: 12px;
+		}
+		.empty {
+			color: #888;
+			font-style: italic;
+			font-size: 14px;
+			line-height: 1.4;
+		}
+		a {
+			color: #7aa2f7;
+			text-decoration: none;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+		.back {
+			margin-top: 30px;
+		}
+		.modes {
+			margin-top: 20px;
+		}
+		.modes button {
+			font-family: monospace;
+			font-size: 14px;
+			padding: 6px 12px;
+			margin: 0 5px;
+			background: transparent;
+			border: 1px solid #333;
+			color: #e0e0e0;
+			cursor: pointer;
+		}
+		.modes button:hover {
+			border-color: #7aa2f7;
+		}
+		.modes button.active {
+			border-color: #7aa2f7;
+			color: #7aa2f7;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>ASCII QR Generator</h1>
+		<pre id="output"></pre>
+		<input type="text" id="input" placeholder="Type something..." autofocus>
+		<div class="modes">
+			<button id="mode1x">1x</button>
+			<button id="mode2x" class="active">2x</button>
+			<button id="copy">Copy</button>
+		</div>
+		<div class="back">
+			<a href="../">&larr; Back</a>
+		</div>
+	</div>
+	<script src="https://unpkg.com/qrcode-generator@1.4.4/qrcode.js"></script>
+	<script>
+		const input = document.getElementById('input');
+		const output = document.getElementById('output');
+		const mode1xBtn = document.getElementById('mode1x');
+		const mode2xBtn = document.getElementById('mode2x');
+		const copyBtn = document.getElementById('copy');
+
+		const defaultURL = 'https://lillibridge.io/jelly48/';
+		let mode = '2x';
+
+		function generateQR(text) {
+			const content = text || defaultURL;
+			try {
+				const qr = qrcode(0, 'M');
+				qr.addData(content);
+				qr.make();
+
+				const size = qr.getModuleCount();
+				let ascii = '';
+
+				if (mode === '1x') {
+					// Half-block mode: 2 rows per character
+					for (let row = 0; row < size; row += 2) {
+						for (let col = 0; col < size; col++) {
+							const top = qr.isDark(row, col);
+							const bottom = row + 1 < size ? qr.isDark(row + 1, col) : false;
+							if (top && bottom) ascii += '█';
+							else if (top) ascii += '▀';
+							else if (bottom) ascii += '▄';
+							else ascii += ' ';
+						}
+						ascii += '\n';
+					}
+				} else {
+					// Full block mode: 1 row per character, 2 chars wide
+					for (let row = 0; row < size; row++) {
+						for (let col = 0; col < size; col++) {
+							ascii += qr.isDark(row, col) ? '██' : '  ';
+						}
+						ascii += '\n';
+					}
+				}
+				output.textContent = ascii;
+			} catch (e) {
+				output.innerHTML = '<span class="empty">Text too long for QR code</span>';
+			}
+		}
+
+		function setMode(newMode) {
+			mode = newMode;
+			mode1xBtn.classList.toggle('active', mode === '1x');
+			mode2xBtn.classList.toggle('active', mode === '2x');
+			generateQR(input.value);
+		}
+
+		mode1xBtn.addEventListener('click', () => setMode('1x'));
+		mode2xBtn.addEventListener('click', () => setMode('2x'));
+		copyBtn.addEventListener('click', () => {
+			navigator.clipboard.writeText(output.textContent);
+			copyBtn.textContent = 'Copied!';
+			setTimeout(() => copyBtn.textContent = 'Copy', 1500);
+		});
+		input.addEventListener('input', (e) => generateQR(e.target.value));
+		window.onload = () => generateQR(input.value);
+	</script>
+</body>
+</html>
