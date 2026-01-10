@@ -1,9 +1,17 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>ASCII QR Generator</title>
+	<title>ASCII QR Code Generator - Free Online Text QR Maker</title>
+	<meta name="description" content="Generate QR codes as ASCII art instantly. Free online tool that creates copy-pasteable text QR codes in real-time as you type.">
+	<meta name="keywords" content="QR code, ASCII art, text QR, QR generator, unicode QR">
+	<link rel="canonical" href="https://lillibridge.io/ascii-qr/">
+	<!-- Open Graph -->
+	<meta property="og:title" content="ASCII QR Code Generator">
+	<meta property="og:description" content="Generate QR codes as ASCII art. Copy-pasteable text QR codes created in real-time.">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://lillibridge.io/ascii-qr/">
 	<style>
 		body {
 			font-family: monospace;
@@ -26,7 +34,12 @@
 		}
 		h1 {
 			font-size: 18px;
-			margin-bottom: 20px;
+			margin-bottom: 5px;
+		}
+		.subtitle {
+			color: #666;
+			font-size: 14px;
+			margin: 0 0 20px 0;
 		}
 		input {
 			font-family: monospace;
@@ -99,6 +112,7 @@
 <body>
 	<div class="container">
 		<h1>ASCII QR Generator</h1>
+		<p class="subtitle">Generate copy-pasteable QR codes as text</p>
 		<pre id="output"></pre>
 		<input type="text" id="input" placeholder="Type something..." autofocus>
 		<div class="modes">
